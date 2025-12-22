@@ -8,12 +8,7 @@ from .models import Investiment
 
 
 class InvestimentListCreateApiView(ListCreateAPIView):
-    queryset = Investiment.objects.all().only(
-        'id',
-        'created_at',
-        'investor',
-        'value',
-    )
+    queryset = Investiment.objects.all()
 
     def get_serializer_class(self):
         if self.request.method == 'GET':

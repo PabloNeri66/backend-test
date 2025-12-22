@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from users.views import UserListCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(
+        'api/v1/users/register/',
+        UserListCreateView.as_view(),
+        name='user-create-list',
+    ),
 ]

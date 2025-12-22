@@ -6,7 +6,7 @@ from django.utils import timezone
 
 
 class InvestimentBusiness:
-    """Lógica de Negócio do Investimento
+    '''Lógica de Negócio do Investimento
 
     O investimento renderá 0,52% todos os meses,
     no mesmo dia em que for realizado.
@@ -15,7 +15,7 @@ class InvestimentBusiness:
     o valor ganho passará a fazer parte do saldo do investimento para
     o próximo pagamento.
 
-    """
+    '''
     MONTHLY_RATE = Decimal('0.0052')
 
     def __init__(
@@ -29,9 +29,9 @@ class InvestimentBusiness:
         self.withdrawn_created_at = withdrawn_created_at
 
     def calculate_amount(self) -> Decimal:
-        """
+        '''
         Calculo do Montante de um investimento aberto(data atual).
-        """
+        '''
         initial_date = self.investiment_created_at.date()
         today = timezone.localdate()
 
@@ -47,19 +47,19 @@ class InvestimentBusiness:
         return amount.quantize(Decimal('0.01'), rounding=ROUND_HALF_EVEN)
 
     def calculate_gains(self) -> Decimal:
-        """
+        '''
         Cálculo dos ganhos (montante - investido) em um investimento
         aberto(Data atual).
-        """
+        '''
         amount = self.calculate_amount()
         gains = amount - self.investiment_value
 
         return gains.quantize(Decimal('0.01'), rounding=ROUND_HALF_EVEN)
 
     def calculate_amount_withdrawn(self) -> Decimal:
-        """
+        '''
         Saldo Montante em um investimento fechado.
-        """
+        '''
         initial_date = self.investiment_created_at.date()
         withdrawn_date = self.withdrawn_created_at.date()
 
@@ -73,21 +73,21 @@ class InvestimentBusiness:
         return amount.quantize(Decimal('0.01'), rounding=ROUND_HALF_EVEN)
 
     def calculate_gains_withdrawn(self) -> Decimal:
-        """Calculo de Ganho em um investimento Fechado."""
+        '''Calculo de Ganho em um investimento Fechado.'''
         amount = self.calculate_amount_withdrawn()
         gains = amount - self.investiment_value
 
         return gains.quantize(Decimal('0.01'), rounding=ROUND_HALF_EVEN)
 
     def calculate_net_amount_withdrawn(self):
-        """
+        '''
         Calculo do montante para saque de um investimento fechado
         (A tributar os ganhos).
 
         Se tiver menos de um ano, a percentagem será de **22,5%** (imposto = 45,00).
         Se tiver entre um e dois anos, a percentagem será de **18,5%** (imposto = 37,00).
         Se tiver mais de dois anos, a percentagem será de **15%** (imposto = 30,00).
-        """
+        '''
         amount = self.calculate_amount_withdrawn()
         gains = amount - self.investiment_value
         initial_date = self.investiment_created_at.date()
@@ -111,9 +111,9 @@ class InvestimentBusiness:
         )  # saldo montante(amount) limpo para retorno.
 
     def calculate_net_gains_withdrawn(self) -> Decimal:
-        """
+        '''
         Calculo dos Ganhos de um investimento fechado e tributado.
-        """
+        '''
         amount = self.calculate_net_amount_withdrawn()
         initial_investiment = self.investiment_value
 

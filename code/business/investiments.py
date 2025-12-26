@@ -84,9 +84,14 @@ class InvestimentBusiness:
         Calculo do montante para saque de um investimento fechado
         (A tributar os ganhos).
 
-        Se tiver menos de um ano, a percentagem será de **22,5%** (imposto = 45,00).
-        Se tiver entre um e dois anos, a percentagem será de **18,5%** (imposto = 37,00).
-        Se tiver mais de dois anos, a percentagem será de **15%** (imposto = 30,00).
+        Se tiver menos de um ano, a percentagem será de **22,5%**
+        (imposto = 45,00).
+
+        Se tiver entre um e dois anos, a percentagem será de **18,5%**
+        (imposto = 37,00).
+
+        Se tiver mais de dois anos, a percentagem será de **15%**
+        (imposto = 30,00).
         '''
         amount = self.calculate_amount_withdrawn()
         gains = amount - self.investiment_value

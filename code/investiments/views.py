@@ -5,6 +5,10 @@ from rest_framework.generics import (
 )
 
 from .models import Investiment
+from . serializers import (
+    InvestimentListSerializer,
+    InvestimentCreateSerializer,
+)
 
 
 class InvestimentListCreateApiView(ListCreateAPIView):
@@ -12,8 +16,8 @@ class InvestimentListCreateApiView(ListCreateAPIView):
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
-            return None
-        return None
+            return InvestimentListSerializer
+        return InvestimentCreateSerializer
 
 
 class InvestimentRetrieveApiView(RetrieveAPIView):

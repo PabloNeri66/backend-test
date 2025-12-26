@@ -8,6 +8,7 @@ from .models import Investiment
 from . serializers import (
     InvestimentListSerializer,
     InvestimentCreateSerializer,
+    InvestimentWithdrawnSerializer,
 )
 
 
@@ -21,8 +22,10 @@ class InvestimentListCreateApiView(ListCreateAPIView):
 
 
 class InvestimentRetrieveApiView(RetrieveAPIView):
-    pass
+    queryset = Investiment.objects.all()
+    serializer_class = InvestimentListSerializer
 
 
 class InvestimentWithdrawnUpdateApiView(UpdateAPIView):
-    pass
+    queryset = Investiment.objects.all().defer('investor')
+    serializer_class = InvestimentWithdrawnSerializer

@@ -132,3 +132,21 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 # limit=100&offset=400
+
+
+# logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}

@@ -27,5 +27,5 @@ class InvestimentRetrieveApiView(RetrieveAPIView):
 
 
 class InvestimentWithdrawnUpdateApiView(UpdateAPIView):
-    queryset = Investiment.objects.all().defer('investor')
+    queryset = Investiment.objects.all()
     serializer_class = InvestimentWithdrawnSerializer

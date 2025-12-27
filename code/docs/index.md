@@ -346,4 +346,43 @@ Este design garante:
 ✅ Facilidade de manutenção
 ✅ Segurança nas regras de negócio
 
-Arquitetura MVT baseada no atendimento aos requisitos pedidos e a proposta do Framework Django.
+Arquitetura MVT baseada no atendimento aos requisitos pedidos e a proposta do Framework Django Rest.
+
+Format:
+Tenho um padrão de código bem parecido com o padrão, buscando sempre melhorar, todavia para
+facilitar a leitura da equipe e possível manutencao, usei o ruff para format.
+
+---
+
+Requirements:
+
+```python
+asgiref==3.11.0
+click==8.3.1
+colorama==0.4.6
+Django==6.0
+djangorestframework==3.16.1
+ghp-import==2.1.0
+Jinja2==3.1.6
+Markdown==3.10
+MarkupSafe==3.0.3
+mergedeep==1.3.4
+mkdocs==1.6.1
+mkdocs-get-deps==0.2.0
+mslex==1.3.0
+packaging==25.0
+pathspec==0.12.1
+platformdirs==4.5.1
+psutil==6.1.1
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.1
+PyYAML==6.0.3
+pyyaml_env_tag==1.1
+ruff==0.14.10
+six==1.17.0
+sqlparse==0.5.5
+taskipy==1.14.1
+tomli==2.3.0
+tzdata==2025.3
+watchdog==6.0.0
+```

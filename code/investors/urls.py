@@ -13,6 +13,6 @@ urlpatterns = [
     path(
         'api/v1/investors/<int:pk>/',
         InvestorRetrieveUpdateDestroyApiView.as_view(),
-        name='investor-detail-update-delete'
+        name='investor-detail-update-delete',
     ),
 ]

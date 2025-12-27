@@ -5,7 +5,7 @@ from rest_framework.generics import (
 )
 
 from .models import Investiment
-from . serializers import (
+from .serializers import (
     InvestimentListSerializer,
     InvestimentCreateSerializer,
     InvestimentWithdrawnSerializer,

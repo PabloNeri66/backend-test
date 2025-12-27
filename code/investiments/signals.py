@@ -21,12 +21,12 @@ def send_investiment_created_event(sender, instance, created, **kwargs):
                 investor=instance.investor,
                 timestamp_created_at=timezone.localtime(
                     instance.created_at
-                ).strftime("%Y/%m/%d, %H:%M:%S"),
+                ).strftime('%Y/%m/%d, %H:%M:%S'),
             )
 
             investiment_service.send_created_investiment_email(data=data)
-            logger.info(f'enviando Ok! {data.get('timestamp_created_at')}')
+            logger.info(f'enviando Ok! {data.get("timestamp_created_at")}')
 
     except Exception as e:
-        logger.error(f"[ERRO SIGNAL Investiment-create] {e}")
+        logger.error(f'[ERRO SIGNAL Investiment-create] {e}')
         pass

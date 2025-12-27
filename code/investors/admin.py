@@ -3,9 +3,7 @@ from .models import Investor
 
 
 class InvestorAdmin(admin.ModelAdmin):
-    list_display = [
-        'user', 'name', 'cpf'
-    ]
+    list_display = ['user', 'name', 'cpf']
     search_fields = [
         'cpf',
     ]

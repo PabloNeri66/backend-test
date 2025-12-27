@@ -1,4 +1,4 @@
-import os 
+import os
 
 from pathlib import Path
 from dotenv import load_dotenv
@@ -119,11 +119,11 @@ if DEBUG:
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("EMAIL_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
 
 # Pag10
@@ -138,13 +138,11 @@ REST_FRAMEWORK = {
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
         },
     },
-
     'root': {
         'handlers': ['console'],
         'level': 'INFO',

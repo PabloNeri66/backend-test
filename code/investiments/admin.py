@@ -4,10 +4,14 @@ from .models import Investiment
 
 class InvestimentAdmin(admin.ModelAdmin):
     list_display = [
-        'id', 'value', 'investor', 'created_at',
+        'id',
+        'value',
+        'investor',
+        'created_at',
     ]
     search_fields = [
-        'investor', 'cpf',
+        'investor',
+        'cpf',
     ]
 
 

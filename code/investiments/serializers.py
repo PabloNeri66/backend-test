@@ -24,10 +24,10 @@ class InvestimentListSerializer(serializers.ModelSerializer):
         ]
 
     def _business(self, obj):
-        '''
+        """
         Reaproveita o código Classe das regras de negócio para atribuir
         no objeto em instância -> Investimento.
-        '''
+        """
         if not hasattr(obj, '_business_cache'):
             obj._business_cache = InvestimentBusiness(
                 investiment_value=obj.value,
@@ -65,9 +65,7 @@ class InvestimentCreateSerializer(serializers.ModelSerializer):
         read_only_fields = [
             'id',
         ]
-        extra_kwargs = {
-            'value': {'write_only': True}
-        }
+        extra_kwargs = {'value': {'write_only': True}}
 
     def validate_created_at(self, value):
         if value > timezone.now():
@@ -119,8 +117,7 @@ class InvestimentWithdrawnSerializer(serializers.ModelSerializer):
 
             if withdrawn_date < self.instance.created_at:
                 raise serializers.ValidationError({
-                    'withdrawn_created_at':
-                    'Data não pode ser anterior à criação do investimento.'
+                    'withdrawn_created_at': 'Data não pode ser anterior à criação do investimento.'
                 })
 
         return attrs

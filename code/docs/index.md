@@ -346,4 +346,4 @@ Este design garante:
 ✅ Facilidade de manutenção
 ✅ Segurança nas regras de negócio
 
-Arquitetura baseada na estrutura do Framework que atende ao requisitado.
+Arquitetura MVT baseada no atendimento aos requisitos pedidos e a proposta do Framework Django.

@@ -1,46 +1,40 @@
-Olá Pessoal!
-Realizei esse teste de Backend. Construí uma api, seguindo os requisitos do sistema/caso.
+Olá, pessoal.
 
-Com a Linguagem Python e o framework Django + Drf, realizei o projeto no padrão MVT.
+Realizei este teste de Backend, no qual construí uma API seguindo os requisitos propostos no sistema/caso apresentado.
 
-Motivo de escolha foi a capacidade de implementar um sistema com usuário genérico desaclopado
-do Investidor, já que o django fornece um User Default, admin e sua
-interface administrativa.
+Utilizei a linguagem Python em conjunto com o framework Django e Django Rest Framework (DRF), estruturando o projeto no padrão MVT.
 
-Além disso, o queryset e Orm do django auxilia bastante no desempenho das queries em funcao
-das regras de negócio, caso existisse mais complexidade, era possível otimizar joins entre
-tabelas.
+A escolha do Django se deu principalmente pela possibilidade de implementar um sistema com um usuário genérico desacoplado da entidade Investidor, aproveitando o User padrão fornecido pelo framework, bem como sua interface administrativa nativa.
 
-O serializer do django, é o responsável pelos dados com validators e tratamentos que fa-
-cilitam a produtividade do dev.
+Além disso, o ORM e os querysets do Django auxiliam significativamente no desempenho das consultas, especialmente considerando as regras de negócio envolvidas. Em um cenário de maior complexidade, seria possível otimizar ainda mais as queries, incluindo joins entre tabelas de forma eficiente.
 
-O Signals/Gatilho do django é essencial para o serviço externo SMTP que indicaram.
+Os serializers do Django foram utilizados como responsáveis pelo tratamento e validação dos dados, o que contribui diretamente para a produtividade do desenvolvedor e para a segurança da aplicação.
 
-Portanto minha escolha, além da justificativa de conhecimento técnico em aprendizado
-constante, deve também, a produtividade do django e sua abstração.
+Os Signals (gatilhos) do Django foram empregados como parte essencial da integração com o serviço externo de SMTP, conforme solicitado nos requisitos.
 
-Dividi as entidades entre:
--Investidores
--Investimentos
--Usuarios
+Portanto, a escolha da stack não se deu apenas por afinidade técnica ou aprendizado contínuo, mas também pela produtividade, organização e nível de abstração que o Django oferece.
 
-realizei o crud de investidores e de Investimentos.
+As entidades foram divididas em:
 
-em investimentos priorizei a seguranca de registros e usei uma flag booleana
-para indicar o encerramento.
+- Usuários
 
+- Investidores
 
-Futuramente, eu criaria perms e auth, para proteger o devido uso de cada Endpoint.
-Além disso, seria interessante implementar talvez uma entidade Wallet
-que assegurasse esses investimentos e métricas/business.
+- Investimentos
 
-Utilizei também Libs auxiliares, todas estão nos requirements e na docs.
+Foi implementado o **CRUD** completo para Investidores e Investimentos.
 
-Para Format do código usei Ruff, tenho minhas manias e quero deixar padrão a leitura.
-Para Task usei taskipy que facilita chamadas de tasks
-Para Docs, usei MKdocs que ajuda no visual do Md(index)
+No caso dos investimentos, priorizei a segurança e a integridade dos registros, utilizando uma flag booleana para indicar o encerramento, evitando alterações indevidas em registros históricos.
 
-Assegurei as Variáveis de Ambiente no .Env local.
+Como melhorias futuras, considero a implementação de permissões e autenticação mais refinadas, garantindo o uso adequado de cada endpoint. Além disso, seria interessante a criação de uma entidade Wallet, responsável por consolidar os investimentos, métricas e regras de negócio relacionadas.
 
-Gostaria de um feedback, queria a opinião de vocês o que melhorariam e o que gostaram...
-Obrigado, Prazer!
+Também utilizei bibliotecas auxiliares, todas devidamente documentadas no arquivo de requirements e na documentação do projeto.
+
+Para padronização e formatação do código, utilizei o Ruff, visando manter um padrão de leitura consistente, tento sempre seguir padrão python, mas tenho costumes de aspas e outros toques.
+Para automação de tarefas, utilizei o Taskipy, facilitando a execução de comandos recorrentes. Para documentação, utilizei o MkDocs, buscando uma melhor organização e visualização dos arquivos Markdown.
+
+As variáveis de ambiente foram devidamente protegidas e configuradas por meio de um arquivo .env local.
+
+Fico à disposição para receber feedbacks. Gostaria muito de ouvir a opinião de vocês sobre pontos de melhoria e aspectos positivos do projeto.
+
+Agradeço pela oportunidade, Prazer!
